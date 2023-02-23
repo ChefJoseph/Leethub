@@ -12,7 +12,8 @@
  * @return {number}
  */
 
-//keep halving until guess is mid
+//keep halving until guess is mid, API picks and reveals if mid >=< than pick with -1,0,1
+
 var guessNumber = function(n) {
     let left = 1;
     let right = n;
