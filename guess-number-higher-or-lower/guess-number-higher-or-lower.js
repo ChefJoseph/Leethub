@@ -13,7 +13,7 @@
  */
 
 //keep halving until guess is mid
-var guessNumber = function(n, pick) {
+var guessNumber = function(n) {
     let left = 1;
     let right = n;
     
