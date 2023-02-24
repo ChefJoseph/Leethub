@@ -1,7 +1,8 @@
 /**
  * @param {number} k
  */
- // prototypical inheritance
+
+ // prototypal inheritance
 
 // function MyCircularQueue(k) {
 //   this.queue = new Array(k);
