@@ -10,7 +10,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-//recursive
+//recursive S/T O(n)
 // function postorderTraversal(root) {
 //   const result = [];
 
@@ -28,7 +28,7 @@
 //   return result;
 // }
 
-//iterative
+//iterative S/T O(n)
 function postorderTraversal(root) {
   const result = [];
   const stack = [];
