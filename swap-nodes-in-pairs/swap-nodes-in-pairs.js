@@ -28,7 +28,7 @@
 //   return newHead;
 // }
 
-//iteratively S&T: 
+//iteratively S&T: O(n), O(1), visit each node once, and store a constant number of pointers
 
 var swapPairs = function(head) {
     if (!head || !head.next) {
