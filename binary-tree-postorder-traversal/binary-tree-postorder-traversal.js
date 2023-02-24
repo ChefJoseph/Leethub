@@ -11,19 +11,47 @@
  * @return {number[]}
  */
 //recursive
+// function postorderTraversal(root) {
+//   const result = [];
+
+//   function traverse(node) {
+//     if (!node) {
+//       return;
+//     }
+
+//     traverse(node.left);
+//     traverse(node.right);
+//     result.push(node.val);
+//   }
+
+//   traverse(root);
+//   return result;
+// }
+
+//iterative
 function postorderTraversal(root) {
   const result = [];
+  const stack = [];
 
-  function traverse(node) {
-    if (!node) {
-      return;
-    }
-
-    traverse(node.left);
-    traverse(node.right);
-    result.push(node.val);
+  if (!root) {
+    return result;
   }
 
-  traverse(root);
+  stack.push(root);
+
+  while (stack.length > 0) {
+    const node = stack.pop();
+
+    if (node.left) {
+      stack.push(node.left);
+    }
+
+    if (node.right) {
+      stack.push(node.right);
+    }
+
+    result.unshift(node.val);
+  }
+
   return result;
 }
