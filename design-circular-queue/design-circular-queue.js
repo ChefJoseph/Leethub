@@ -1,6 +1,8 @@
 /**
  * @param {number} k
  */
+ // prototypical inheritance
+
 // function MyCircularQueue(k) {
 //   this.queue = new Array(k);
 //   this.head = -1;
@@ -59,7 +61,8 @@
  * var param_5 = obj.isEmpty()
  * var param_6 = obj.isFull()
  */
-// Class/ prototypical inheritance
+
+// Class syntax
 class MyCircularQueue {
   constructor(k) {
     this.queue = new Array(k);
