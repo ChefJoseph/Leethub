@@ -35,8 +35,8 @@
 //Class
 class MinStack {
   constructor() {
-    this.stack = [];
-    this.minStack = [];
+    this.stack = []; //holds value of the stack
+    this.minStack = []; //holds min values encountered so far
   }
 
   push(val) {
