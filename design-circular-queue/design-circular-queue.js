@@ -64,53 +64,111 @@
  */
 
 // Class syntax
-class MyCircularQueue {
-  constructor(k) {
-    this.queue = new Array(k);
-    this.headIndex = 0;
-    this.count = 0;
-    this.capacity = k;
-  }
+// class MyCircularQueue {
+//   constructor(k) {
+//     this.queue = new Array(k);
+//     this.headIndex = 0;
+//     this.count = 0;
+//     this.capacity = k;
+//   }
 
-  enQueue(value) {
-    if (this.isFull()) {
+//   enQueue(value) {
+//     if (this.isFull()) {
+//       return false;
+//     }
+//     const tailIndex = (this.headIndex + this.count) % this.capacity;
+//     this.queue[tailIndex] = value;
+//     this.count++;
+//     return true;
+//   }
+
+//   deQueue() {
+//     if (this.isEmpty()) {
+//       return false;
+//     }
+//     this.headIndex = (this.headIndex + 1) % this.capacity;
+//     this.count--;
+//     return true;
+//   }
+
+//   Front() {
+//     if (this.isEmpty()) {
+//       return -1;
+//     }
+//     return this.queue[this.headIndex];
+//   }
+
+//   Rear() {
+//     if (this.isEmpty()) {
+//       return -1;
+//     }
+//     const tailIndex = (this.headIndex + this.count - 1) % this.capacity;
+//     return this.queue[tailIndex];
+//   }
+
+//   isEmpty() {
+//     return this.count === 0;
+//   }
+
+//   isFull() {
+//     return this.count === this.capacity;
+//   }
+// }
+
+// Factories Functions
+function MyCircularQueue(k) {
+  let front = 0;
+  let rear = 0;
+  let len = 0;
+  const arr = new Array(k).fill(null);
+
+  function enQueue(value) {
+    if (len === k) {
       return false;
     }
-    const tailIndex = (this.headIndex + this.count) % this.capacity;
-    this.queue[tailIndex] = value;
-    this.count++;
+    arr[rear] = value;
+    rear = (rear + 1) % k;
+    len++;
     return true;
   }
 
-  deQueue() {
-    if (this.isEmpty()) {
+  function deQueue() {
+    if (len === 0) {
       return false;
     }
-    this.headIndex = (this.headIndex + 1) % this.capacity;
-    this.count--;
+    arr[front] = null;
+    front = (front + 1) % k;
+    len--;
     return true;
   }
 
-  Front() {
-    if (this.isEmpty()) {
+  function Front() {
+    if (len === 0) {
       return -1;
     }
-    return this.queue[this.headIndex];
+    return arr[front];
   }
 
-  Rear() {
-    if (this.isEmpty()) {
+  function Rear() {
+    if (len === 0) {
       return -1;
     }
-    const tailIndex = (this.headIndex + this.count - 1) % this.capacity;
-    return this.queue[tailIndex];
+    return arr[(rear - 1 + k) % k];
   }
 
-  isEmpty() {
-    return this.count === 0;
+  function isEmpty() {
+    return len === 0;
   }
 
-  isFull() {
-    return this.count === this.capacity;
+  function isFull() {
+    return len === k;
   }
+    return {
+    enQueue,
+    deQueue,
+    Front,
+    Rear,
+    isEmpty,
+    isFull,
+  };
 }
