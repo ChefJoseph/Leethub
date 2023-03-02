@@ -4,6 +4,7 @@
  */
 function fizzBuzz(n) {
   const ans = [];
+    //1-indexed i = 1
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
       ans.push("FizzBuzz");
