@@ -1,5 +1,6 @@
 Selection Sort
 It will keep swapping until the entire list is sorted.
+
 	Slow. T =O(n^2). Have to search the entire array to find the minimum element. 
     S=O(1). No addtl space. All are in-place.
     Not stable

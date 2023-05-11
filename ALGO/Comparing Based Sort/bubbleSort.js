@@ -1,4 +1,5 @@
 Bubble sort- swaps adjacent elements until the list is sorted.
+
 T= O(n^2) passes twice. S= O(1) no addl space req.
 Stable- since == equal elements will not have swapped. Slow and rarely used in practice.
 Can be faster than selection sort if already in order
