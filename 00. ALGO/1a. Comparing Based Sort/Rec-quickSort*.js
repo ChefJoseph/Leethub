@@ -1,4 +1,4 @@
-quick sort- mroe effic small data sets, good when in-place sorting and not sorted beforehand
+quick sort- more effic SMALL DATA sets, good when in-place sorting and not sorted beforehand
 when time is important
 
 Sorting an array of integers

@@ -1,6 +1,6 @@
 Insertion sort-
-Given a collection of integers, you can sort the list by proceeding from the start of the list, and every time you encounter an element that is out of order, you can continuously swap places with previous elements until it is inserted in its correct relative location based on what you’ve processed thus far. 
--Keeps swapping in reverse order until it is in right place.  
+-In insertion sort, larger values are shifted to the right, creating space for the insertion of smaller values in their proper sorted order to the left.
+-Keeps swapping in reverse order from current/i until it is in right place.  
 
 T=O(n^2), S=O(1)
 -Advantages= 1) stable sort, never swap with an equal element in list. 
@@ -8,7 +8,7 @@ T=O(n^2), S=O(1)
 3) Best choice on small arrays. 
 
 //practice
-let insertionSort = function(arr) {
+  let insertionSort = function(arr) {
     //start with 2nd element
     for (let i = 1; i < arr.length; i++) {
     //store current elem
@@ -32,16 +32,17 @@ let insertionSort = function(arr) {
   console.log(sortedArr); // Output: [1, 2, 4, 5, 8]
   
   //example
+         0  1  2  3
   arr = [5, 2, 1, 3]
 
   i = 1
   current = 2
   j = 1 - 1 = 0
-  while j = 0, arr[j] > current 5> 2
-    arr[1] = arr[0] =5
+  while j = 0, arr[j] > current, 5> 2
+    arr[0+1] = arr[0] =5
     [5,5,1,3]
     j = -1
-    arr[-1+1] = 2
+    arr[-1+1] = arr[0] = 2
     [2,5,1,3]
     //if left number is greater than current number, swap
   
@@ -60,4 +61,16 @@ let insertionSort = function(arr) {
   
 
 
-
+function insertSort(nums) {
+  let n = nums.length;
+  for( let i = 1; i< n; i++){
+    let current = nums[i];
+    let j = i - 1;
+    while(j>=0 && nums[j]>current){
+      nums[j+1] = nums[j];
+      j--;
+    }
+    nums[j+1] = current;
+  }
+  return nums;
+}

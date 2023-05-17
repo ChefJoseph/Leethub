@@ -1,4 +1,4 @@
-merge sort - more effic large data sets
+merge sort - more effic LARGE DATA sets
 Stable, arrays or linked-lists
 
 The time complexity of merge sort is O(n log n), as the array is divided into halves recursively, and each level of recursion has a time complexity of O(n). 
