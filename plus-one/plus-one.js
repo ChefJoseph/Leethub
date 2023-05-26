@@ -11,6 +11,8 @@
     
 // }
 
+// T O(n), SO(1), not creating new data structures
+
 function plusOne(digits) {
     //init carry to incr by 1
     let carry = 1;
@@ -21,7 +23,7 @@ function plusOne(digits) {
         let sum = digit + carry;
         //If digit not adding 10, then carrying 0
         carry = Math.floor(sum / 10);
-        //if under 10, leave as is, if >=10, then leave the single digit.
+        //assign: if under 10, leave as is, if >=10, then leave the single digit.
         digits[i] = sum % 10;
         // not carrying, break. The incr 1 is complete
         // or else carry = 1 continues in loop
