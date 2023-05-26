@@ -29,7 +29,7 @@
     
 var moveZeroes = function(nums) {
 //init to establish position to insert non-zero values
-    lastNonZeroIndex = 0
+    let lastNonZeroIndex = 0
 //iterate nums, if non-zero number, set value to lastNonZeroIndex index and increment
     for(let i = 0; i < nums.length; i++){
         if(nums[i] !== 0) {
@@ -40,4 +40,5 @@ var moveZeroes = function(nums) {
     for(let i = lastNonZeroIndex; i < nums.length; i++) {
         nums[i] = 0;
     }
+    return nums;
 };
