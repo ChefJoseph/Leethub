@@ -14,7 +14,7 @@
 //https://github.com/codemonkeysio/LeetCode/blob/master/06-contains-duplicate/notes.md
 //hashtable
 // T O(n) worst case, S O(n)
-var containsDuplicate = function (nums) {
+function containsDuplicate(nums) {
     //init empty obj
     const hash = {}; 
     //When a duplicate is found in obj return true, or else add nums[i] to obj if it does not exist obj[nums[i]] = true;
