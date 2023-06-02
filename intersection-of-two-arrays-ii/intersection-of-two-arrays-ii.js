@@ -7,33 +7,54 @@
 // Q: What if nums1's size is small compared to nums2's size? Which algorithm is better?
 //Iterate over nums1 and check if exists in nums2
 
+//object method
 function intersect(nums1, nums2) {
-    //store numbers from nums1 and freq count
-    const map = new Map();
-    //store common elements bw nums1 and nums2
-    const result = [];
+  const map = {}; // Plain JavaScript object to store frequency count
+  const result = []; // Array to store common elements
+
+  // Build frequency count for nums1
+  for (const num of nums1) {
+    map[num] = (map[num] || 0) + 1;
+  }
+
+  // Find common elements in nums2
+  for (const num of nums2) {
+    if (map[num] > 0) {
+      result.push(num);
+      map[num]--;
+    }
+  }
+
+  return result;
+}
+//MAP method
+// function intersect(nums1, nums2) {
+//     //store numbers from nums1 and freq count
+//     const map = new Map();
+//     //store common elements bw nums1 and nums2
+//     const result = [];
     
-    //if it exists, get count and incr
-    //if doesnt exist, add to map freq count of 1
-    // map = [1=>2, 2=>2] for nums1=[1,2,2,1]
-    for (const num of nums1) {
-        if (map.has(num)) {
-            map.set(num, map.get(num) + 1);
-        } else {
-            map.set(num, 1);
-        }
-    }
-    //if map has num of num2 && a positive count(or else it might count negatives),
-        //push that num to result
-        //decr count in map
-    for (const num of nums2) {
-        if (map.has(num) && map.get(num) > 0) {
-            result.push(num);
-            map.set(num, map.get(num) - 1);
-        }
-    }
-    return result;
-};
+//     //if it exists, get count and incr
+//     //if doesnt exist, add to map freq count of 1
+//     // map = [1=>2, 2=>2] for nums1=[1,2,2,1]
+//     for (const num of nums1) {
+//         if (map.has(num)) {
+//             map.set(num, map.get(num) + 1);
+//         } else {
+//             map.set(num, 1);
+//         }
+//     }
+//     //if map has num of num2 && a positive count(or else it might count negatives),
+//         //push that num to result
+//         //decr count in map
+//     for (const num of nums2) {
+//         if (map.has(num) && map.get(num) > 0) {
+//             result.push(num);
+//             map.set(num, map.get(num) - 1);
+//         }
+//     }
+//     return result;
+// };
 
 
 
