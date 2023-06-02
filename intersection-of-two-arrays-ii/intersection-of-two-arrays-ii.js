@@ -3,16 +3,15 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
-// T O(m+n) iter over both arrays, SO(n) has to create new array
-// Q: What if nums1's size is small compared to nums2's size? Which algorithm is better?
-//Iterate over nums1 and check if exists in nums2
 
-//object method
+//object method (prob less spae)
+// T O(m+n) iter over both arrays, SO(n+min(n,m))
+
 function intersect(nums1, nums2) {
   const map = {}; // Plain JavaScript object to store frequency count
   const result = []; // Array to store common elements
 
-  // Build frequency count for nums1
+  // Build frequency count for nums1, add element or 1++
   for (const num of nums1) {
     map[num] = (map[num] || 0) + 1;
   }
@@ -28,6 +27,10 @@ function intersect(nums1, nums2) {
   return result;
 }
 //MAP method
+// T O(m+n) iter over both arrays, S larger of O(min(n,m)array & O(n)map has to create new array
+// Q: What if nums1's size is small compared to nums2's size? Which algorithm is better?
+//Iterate over nums1 and check if exists in nums2
+
 // function intersect(nums1, nums2) {
 //     //store numbers from nums1 and freq count
 //     const map = new Map();
