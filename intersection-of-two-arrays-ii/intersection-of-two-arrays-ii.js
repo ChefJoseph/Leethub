@@ -15,15 +15,14 @@ function intersect(nums1, nums2) {
   for (const num of nums1) {
     map[num] = (map[num] || 0) + 1;
   }
-
   // Find common elements in nums2
+    //dont ocunt negatives
   for (const num of nums2) {
     if (map[num] > 0) {
       result.push(num);
       map[num]--;
     }
   }
-
   return result;
 }
 //MAP method
