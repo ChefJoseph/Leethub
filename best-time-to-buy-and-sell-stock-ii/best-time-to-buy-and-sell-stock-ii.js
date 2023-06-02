@@ -4,7 +4,7 @@
  */
 
 function maxProfit(prices) {
-//init prices
+//init profit
     let profit = 0;
 //iterate throught prices array
     
