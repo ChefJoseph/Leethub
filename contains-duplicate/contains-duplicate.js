@@ -16,14 +16,14 @@
 // T O(n) worst case, S O(n)
 var containsDuplicate = function (nums) {
     //init empty obj
-    const obj = {}; 
+    const hash = {}; 
     //When a duplicate is found in obj return true, or else add nums[i] to obj if it does not exist obj[nums[i]] = true;
     for (let i = 0; i < nums.length; i++) {
-        if (obj[nums[i]]) {
+        if (hash[nums[i]]) {
          return true;
         }
     // If not found in obj, setting to true creates property with key as current number, value = true. obj[1]= true => {1:true}
-    obj[nums[i]] = true;
+    hash[nums[i]] = true;
     }
   return false;
 };
