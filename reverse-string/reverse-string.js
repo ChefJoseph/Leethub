@@ -4,20 +4,20 @@
  */
 
 ///recursively, S&T: O(n)
-function reverseString(s) {
-  helper(0, s.length - 1, s);
-  return s;
-}
+// function reverseString(s) {
+//   helper(0, s.length - 1, s);
+//   return s;
+// }
 
-function helper(left, right, s) {
-  if (left >= right) {
-    return;
-  }
-  let temp = s[left];
-  s[left] = s[right];
-  s[right] = temp;
-  helper(left + 1, right - 1, s);
-}
+// function helper(left, right, s) {
+//   if (left >= right) {
+//     return;
+//   }
+//   let temp = s[left];
+//   s[left] = s[right];
+//   s[right] = temp;
+//   helper(left + 1, right - 1, s);
+// }
 
 // T O(n/2) = O(n)
 // S O(1)
@@ -31,16 +31,17 @@ function helper(left, right, s) {
 //     }
 // };
 
+// T O(n)
+// S O(1)
 // solution 2- two-pointer
-// const reverseString = function(s) {
-//     let left = 0;
-//     let right = s.length - 1;
-//     while (left < right) {
-//         let temp = s[left];
-//         s[left] = s[right];
-//         s[right] = temp;
-//         left++;
-//         right--;
-//     }
-//     return s;
-// };
+// array destructuring assignment to flip 
+function reverseString(s){
+    let left = 0;
+    let right = s.length - 1;
+    while (left < right) {
+        [s[left], s[right]] = [s[right], s[left]];
+        left++;
+        right--;
+    }
+    return s;
+};
